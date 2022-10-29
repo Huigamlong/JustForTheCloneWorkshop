@@ -21,5 +21,9 @@ jobs:
       run: echo "${{ toJSON(runner) }}"
     - name: Dump matrix context
       run: echo "${{ toJSON(matrix) }}"
-    - name: Echo my secret
-      run: echo "My Secret is ${{ secret.MYSECRET }}"
+    - name: List my current directory
+      run: ls -l
+    - name: Checkout the curernt repo
+      uses: actions/checkout@v3
+    - name: List my current directory after Checkout
+      run: ls -l

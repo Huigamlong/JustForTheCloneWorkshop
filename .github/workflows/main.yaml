@@ -15,3 +15,9 @@ jobs:
     steps: 
     - name: echo the date
       run: echo "The current time and date in Github is $(date)"
+    - name: echo information about the context
+      run: echo "head_ref - ${{ github.head_ref }}, owner - ${{ github.repository_owner }}"
+    - name: Dump runner context
+      run: echo "${{ toJSON(runner) }}"
+    - name: Dump matrix context
+      run: echo "${{ toJSON(matrix) }}"
